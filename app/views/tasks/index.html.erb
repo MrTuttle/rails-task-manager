@@ -1,0 +1,11 @@
+<h1>Tasks</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li><strong><%= link_to task.title, task_path(task) %></strong>
+    <span><%= link_to "supprimer", task_path(task), data: {turbo_method: :delete} %></span>
+    <span><%= link_to "editer", edit_task_path(task) %></span>
+
+    </li>
+  <% end %>
+</ul>
+<p><%= link_to "Ajouter une nouvelle tache", tasks_new_path %>
